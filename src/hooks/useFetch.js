@@ -6,19 +6,19 @@ const useFetch = (url, options)=>{
     const [error, setError] = useState(null);
 
     useEffect(()=>{
-        const getData = async ()=>{
+        (async ()=>{
             try{
                 const res= await fetch(url, options);
                 const json= await res.json();
                 setResult(json);
+                
                 setLoading(false);
             } catch(err){
                 setError(err);
                 setLoading(false);
             }
-        }
-        getData();
-    }, [url, options])
+        })()
+    }, [options, url])
     return {loading, result, error};
 }
 

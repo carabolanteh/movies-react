@@ -1,26 +1,41 @@
 import useFetch from "../hooks/useFetch";
-// import Loading from "../components/Loading"
 
 import {URL_API, API_KEY} from '../utils/constants';
+import { Row, Col } from "antd";
+
 import SliderMovies from '../components/SliderMovies';
 
+import MovieList from "../components/MovieList/MovieList";
 
 
 
 const Home = () =>{
     
-    const url = `${URL_API}/movie/now-playing?api_key=${API_KEY}&language=en-ES&page=1`;
+    const url = `${URL_API}/movie/now_playing?api_key=${API_KEY}&language=en-ES&page=1`;
+    const urlPopular =  `${URL_API}/movie/popular?api_key=${API_KEY}&language=es-ES&page=1`
+    const urlRanked = `${URL_API}/movie/top_rated?api_key=${API_KEY}&language=es-ES&page=1`
 
     const newMovies = useFetch(url);
-
-    // const movies = useFetch(url);
-    // const url = "https://api.themoviedb.org/3/movie/popular?api_key=20734de95bb307848273312ec09fe030&language=en-ES&page=1"
-    // const movies = useFetch(url);
-    
+    const popularMovies = useFetch(urlPopular);
+    const topRanked = useFetch(urlRanked);
 
     return (
         <div>
             <SliderMovies newMovies={newMovies}/>
+            <Row>
+                <Col span={12}>
+                    <MovieList 
+                        title="Películas Populares"
+                        popularMovies={popularMovies}
+                    />
+                </Col>
+                <Col span={12}>
+                    <MovieList 
+                        title="Top Mejores Películas"
+                        popularMovies={topRanked}
+                    />
+                </Col>
+            </Row>
         </div>
     )
 }
