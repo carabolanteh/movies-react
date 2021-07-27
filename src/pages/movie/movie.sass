@@ -1,0 +1,60 @@
+.movie
+    height: calc(100vh - 64px)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    &__dark
+        position: absolute
+        top: 0
+        left: 0
+        height: 100vh
+        width: 100%
+        background-color: rgba(0, 0, 0, .6)
+    &__info
+        height: 70%
+        display: flex
+        align-items: center
+        justify-content: space-around
+        h1
+            color: white
+            margin: 0
+            font-size: 2.5em
+            span
+                font-size: 20px
+                margin-left: 12px
+                opacity: .7
+    &__poster
+        height: 70vh
+        div
+            height: 100%
+            background-repeat: no-repeat
+            background-position: center
+            background-size: contain
+    &__content
+        margin-top: 50px
+        p, h3, ul
+            color: white
+            font-size: 15px
+        h3
+            font-weight: bold
+            font-size: 24px
+.button
+    height: 100%
+    background-color: transparent
+    color: white
+    border: 0
+    font-size: 25px
+    border-radius: 30px
+    &:hover,
+    &:focus,
+    &:active
+        background-color: rgb(180, 180, 180)
+        color: rgb(8, 14, 93)
+    &:hover
+        cursor: pointer
+           
+
+.extra
+    display: flex
+    height: 100% !important
+    align-items: center !important

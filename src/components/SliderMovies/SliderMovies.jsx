@@ -15,7 +15,7 @@ const SliderMovies = props => {
         const { results } = newMovies.result;
 
         return (
-            <Carousel outplay className='slider-movies'>
+            <Carousel autoplay className='slider-movies'>
             {results.map(movie=>(
                 <Movie
                         key={movie.id}
