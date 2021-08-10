@@ -25,7 +25,7 @@ const Home = () =>{
         <div>
             <SliderMovies newMovies={newMovies}/>
             <Row>
-                <Col span={12}>
+                <Col span={12}> 
                     <MovieList 
                         title="Películas Populares"
                         popularMovies={popularMovies}

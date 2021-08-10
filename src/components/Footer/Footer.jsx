@@ -12,7 +12,7 @@ const Footer = () => {
             className="footer"
         >
             <p>
-                Hannah Carabolante
+               Hecho con ❤ por Gabriela Duran y Hannah Carabolante
             </p>
         </Footer>
     );
